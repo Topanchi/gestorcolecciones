@@ -5,10 +5,11 @@
       </div>
       <div class="card-body p-4">
 
-        <!-- Login Form -->
+        <!-- Register Form -->
         <form [formGroup]="formRegister" (ngSubmit)="registrarse()">
             <label style="float: left;">Email</label>
             <input formControlName="email" type="text" autocomplete="off" class="form-control m-2" placeholder="correo@ejemplo.com" required>
+            
             <label style="float: left;">Password</label>
             <input formControlName="password" type="password" autocomplete="off" class="form-control m-2" id="password" placeholder="*************">
             <label class="text-danger" *ngIf="formRegister.controls['password'].hasError('hasNumber')">
@@ -23,12 +24,14 @@
             <label class="text-danger" *ngIf="formRegister.controls['password'].hasError('hasSpecialCharacters')">
                 Debe tener al menos 1 carácter especial
             </label>
+
             <button class="btn btn-primary btn-block m-2"  type="submit" [disabled]="!formRegister.valid">
                 Registrarse
             </button>
+            <label>Ya tienes cuenta? <a routerLink="/login">Ingresar</a></label>
         </form>
-
-        <label style="float: left;">Email</label>
+        <!-- End Register Form -->
+        <!-- <label style="float: left;">Email</label>
         <input class="form-control m-2" type="email" placeholder="ingrese su email" [(ngModel)]="usuario.email">
   
         <label style="float: left;">Password</label>
@@ -36,7 +39,7 @@
   
         <button class="btn btn-primary btn-block m-2" (click)="registrarse()">Registrarse</button>
 
-        <label>Ya tienes cuenta? <a routerLink="/login">Ingresar</a></label>
+        <label>Ya tienes cuenta? <a routerLink="/login">Ingresar</a></label> -->
  
       </div>
       
