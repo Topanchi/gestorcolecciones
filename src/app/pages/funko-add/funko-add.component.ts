@@ -20,11 +20,13 @@ export class FunkoAddComponent implements OnInit {
     this.funkoForm = this._formBuilder.group({
       name: ['', Validators.compose([Validators.required])],
       description: ['', Validators.compose([Validators.required])],
+      image: ['', Validators.compose([Validators.required])],
     });
   }
 
   public onSubmit() {
     console.log(this.funkoForm);
+    //TODO: enviar json a firebase para luego enlazarle la imagen
   }
 
   public cargarImagen(event: any){
