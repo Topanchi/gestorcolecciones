@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    MatSliderModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

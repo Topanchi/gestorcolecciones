@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FunkoListRoutingModule } from './funko-list-routing.module';
 import { FunkoListComponent } from './funko-list.component';
-
+import { MatCardModule, MatCardActions, MatCardContent, MatCardHeader } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { FunkoListComponent } from './funko-list.component';
   ],
   imports: [
     CommonModule,
-    FunkoListRoutingModule
+    FunkoListRoutingModule,
+    MatCardModule,
   ]
 })
 export class FunkoListModule { }
