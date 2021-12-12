@@ -1,1 +1,35 @@
-<p>funko-add works!</p>
+<div class="container">
+    <div class="pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Añadir funko</h1>
+        <p class="custom-text">Porfavor complete los campos...
+            </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="funkoForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <input type="text" class="form-control" id="description" formControlName="description" placeholder="Descripción">
+                </div>
+                
+                <div class="form-group">
+                    <label for="image">Imagen</label><br>
+                    <input type="file" (change)="cargarImagen($event)" accept=".png,.jpg" />
+                </div>
+                <!-- <div class="form-group">
+                    <label for="category">Categoría</label>
+                    <select class="form-control" id="category" formControlName="category">
+                        <option value="">Seleccione una categoría</option>
+                        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                    </select>
+                </div> -->
+                <button type="submit" class="btn btn-primary btn-block m-2">Añadir</button>
+            </form>
+        </div>
+    </div>
