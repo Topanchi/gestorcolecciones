@@ -6,7 +6,7 @@
       <div class="card-body p-4">
 
         <!-- Register Form -->
-        <form [formGroup]="formRegister" (ngSubmit)="registrarse()">
+        <form [formGroup]="formRegister" (ngSubmit)="registrarse()" novalidate>
             <label style="float: left;">Email</label>
             <input formControlName="email" type="text" autocomplete="off" class="form-control m-2" placeholder="correo@ejemplo.com" required>
             
@@ -15,6 +15,8 @@
             <label class="text-danger" *ngIf="formRegister.controls['password'].hasError('hasNumber')">
                 Debe tener al menos 1 número
             </label>
+          <!--   <p *ngIf="password.touched && password.invalid" class="error"><sup>*</sup>Debe ingresar la contraseña</p>
+            <p *ngIf="password.hasError('hasNumber')" class="error"><sup>*</sup>Debe tener al menos 1 número</p> -->
             <label class="text-danger" *ngIf="formRegister.controls['password'].hasError('hasCapitalCase')">
                 Debe tener al menos 1 mayúscula
             </label>

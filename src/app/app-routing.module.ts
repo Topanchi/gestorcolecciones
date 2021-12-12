@@ -12,6 +12,18 @@ const routes: Routes = [
     path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule),
   },
   {
+    path:'funko-list', loadChildren: () => import('./pages/funko-list/funko-list.module').then(m => m.FunkoListModule),
+  },
+  {
+    path:'funko-detail/:id', loadChildren: () => import('./pages/funko-detail/funko-detail.module').then(m => m.FunkoDetailModule),
+  },
+  {
+    path:'funko-edit/:id', loadChildren: () => import('./pages/funko-edit/funko-edit.module').then(m => m.FunkoEditModule),
+  },
+  {
+    path:'funko-add', loadChildren: () => import('./pages/funko-add/funko-add.module').then(m => m.FunkoAddModule),
+  },
+  {
     path: '**', loadChildren: () => import('./pages/pages-not-found/pages-not-found.module').then(m => m.PagesNotFoundModule),
   }
 ];

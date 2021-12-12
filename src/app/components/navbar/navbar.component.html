@@ -5,6 +5,23 @@
         Sistema de Gestión de Colecciones
     </a>
 
+    <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+            Funko Pop
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem routerLink="/funko-list">Ver lista</button>
+        </div>
+    </div>
+    <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+            Pokemon
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem routerLink="#">Ver pokedex</button>
+        </div>
+    </div>
+
     <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user; else btnIngresar">
         <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
             <img style="border-radius: 100%;" *ngIf="user.photoURL" src="{{user.photoURL}}"
@@ -15,6 +32,8 @@
           <button ngbDropdownItem (click)="logout()">Salir</button>
         </div>
     </div>
+
+    
 
    
 
