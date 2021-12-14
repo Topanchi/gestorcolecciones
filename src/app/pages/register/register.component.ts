@@ -11,13 +11,14 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegisterComponent implements OnInit {
   formRegister: any = FormGroup;
+  emailFormat = '^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})$';
 
   usuario = {
     email: '',
     password: ''
   }
 
-  constructor(//private _notificationService: NotificationService,
+  constructor(private _notificationService: NotificationService,
               private _authService: AuthService,
               public fb: FormBuilder, 
               private route: Router) { }
@@ -27,9 +28,12 @@ export class RegisterComponent implements OnInit {
   }
 
   initForm() {
-    /* 
+   /* 
     this.formRegister = new FormGroup({
-      email: new FormControl('',  Validators.compose([Validators.required, Validators.email])),
+      email: new FormControl('',  Validators.compose([
+        Validators.required, 
+        Validators.pattern(this.emailFormat)
+      ])),
       password: new FormControl('', Validators.compose(
         [
           // 1. Verifica que el password sea obligatorio
@@ -49,10 +53,13 @@ export class RegisterComponent implements OnInit {
         ])
       )
     });  
-    */
+  */
 
     this.formRegister = this.fb.group({
-      email: ['', Validators.compose([Validators.required, Validators.email])],
+      email: ['',Validators.compose(
+        [Validators.required, 
+        Validators.pattern(this.emailFormat)]
+                )],
       password: ['', Validators.compose(
         [
           // 1. Verifica que el password sea obligatorio
@@ -87,7 +94,7 @@ export class RegisterComponent implements OnInit {
     const { email, password } = this.usuario;
     this._authService.register(email, password).then(res => {
       console.log("se registró: ", res);
-      //this._notificationService.showInfo("Usuario registrado con éxito",("Info"));
+      this._notificationService.showInfo("Usuario registrado con éxito",("Info"));
       if(!res?.user?.isAnonymous){
         this.route.navigate(['/login']);
       }

@@ -9,25 +9,48 @@
         <form [formGroup]="formRegister" (ngSubmit)="registrarse()" novalidate>
             <label style="float: left;">Email</label>
             <input formControlName="email" type="text" autocomplete="off" class="form-control m-2" placeholder="correo@ejemplo.com" required>
+            <div class="mb-3" *ngIf="formRegister.get('email').errors && formRegister.get('email').dirty">
+              <span class="spanAlert">
+                  <span *ngIf="formRegister.get('email').hasError('required')">
+                      El campo es requerido
+                  </span>
+                  <span *ngIf="formRegister.get('email').hasError('email')">
+                      El formato de correo es incorrecto
+                  </span>
+              </span>
+            </div>
             
             <label style="float: left;">Password</label>
             <input formControlName="password" type="password" autocomplete="off" class="form-control m-2" id="password" placeholder="*************">
-            <label class="text-danger" *ngIf="formRegister.controls['password'].hasError('hasNumber')">
-                Debe tener al menos 1 número
-            </label>
-          <!--   <p *ngIf="password.touched && password.invalid" class="error"><sup>*</sup>Debe ingresar la contraseña</p>
-            <p *ngIf="password.hasError('hasNumber')" class="error"><sup>*</sup>Debe tener al menos 1 número</p> -->
-            <label class="text-danger" *ngIf="formRegister.controls['password'].hasError('hasCapitalCase')">
-                Debe tener al menos 1 mayúscula
-            </label>
-            <label class="text-danger" *ngIf="formRegister.controls['password'].hasError('hasSmallCase')">
-                Debe tener al menos 1 minúscula
-            </label>
-            <label class="text-danger" *ngIf="formRegister.controls['password'].hasError('hasSpecialCharacters')">
-                Debe tener al menos 1 carácter especial
-            </label>
-
-            <button class="btn btn-primary btn-block m-2"  type="submit" [disabled]="!formRegister.valid">
+            <div class="mb-3" *ngIf="formRegister.get('password').errors && formRegister.get('password').dirty">
+              <span class="spanAlert"> 
+                  <span *ngIf="formRegister.get('password').hasError('required')">
+                      El campo es requerido
+                  </span>
+                  <span *ngIf="formRegister.get('password').hasError('minlength')">
+                      La contraseña debe tener al menos 6 caracteres
+                  </span>
+                  <span *ngIf="formRegister.get('password').hasError('maxlength')">
+                      La contraseña debe tener un máximo de 10 caracteres
+                  </span>
+          
+                  <span  *ngIf="formRegister.get('password').hasError('hasNumber')">
+                    Debe tener al menos 1 número
+                  </span>
+                  <span  *ngIf="formRegister.get('password').hasError('hasCapitalCase')">
+                      Debe tener al menos 1 mayúscula
+                  </span>
+                  <span  *ngIf="formRegister.get('password').hasError('hasSmallCase')">
+                      Debe tener al menos 1 minúscula
+                  </span>
+                  <span *ngIf="formRegister.get('password').hasError('hasSpecialCharacters')">
+                      Debe tener al menos 1 carácter especial
+                  </span>
+      
+              </span>
+            </div>
+            
+            <button class="btn btn-primary btn-block m-2"  type="submit" >
                 Registrarse
             </button>
             <label>Ya tienes cuenta? <a routerLink="/login">Ingresar</a></label>

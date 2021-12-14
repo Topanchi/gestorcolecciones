@@ -5,3 +5,10 @@
     width: 100vw;
     height: 100vh;
 }
+
+/* Validations**/
+
+.spanAlert{
+    color: red;
+    font-weight: bold;
+  }

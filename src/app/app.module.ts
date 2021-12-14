@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatSliderModule } from '@angular/material/slider';
     NgbModule,
     MatSliderModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
