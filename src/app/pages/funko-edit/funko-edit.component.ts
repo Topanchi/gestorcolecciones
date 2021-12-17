@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FunkoIronMan } from 'src/app/models/funko-iron-man';
 import { NotificationService } from 'src/app/services/notification.service';
@@ -34,6 +34,18 @@ export class FunkoEditComponent implements OnInit {
   }
 
   private initForm(funko: FunkoIronMan) {
+    this.funkoEditForm = new FormGroup({
+      name: new FormControl(funko ? funko.name : '', Validators.compose([Validators.required])),
+      personaje: new FormControl(funko ? funko.personaje : '', Validators.compose([Validators.required])),
+      description: new FormControl(funko ? funko.description : '', Validators.compose([Validators.required])),
+      collectionNumber: new FormControl(funko ? funko.collectionNumber : '', Validators.compose([Validators.required])),
+      imageComplete: new FormControl('', Validators.compose([Validators.required])),
+      imageSolo: new FormControl('', Validators.compose([Validators.required]))
+    });
+  }
+
+  /* 
+  private initForm(funko: FunkoIronMan) {
     this.funkoEditForm = this._formBuilder.group({
       name: [funko ? funko.name : '', Validators.compose([Validators.required])],
       personaje: [funko ? funko.personaje : '', Validators.compose([Validators.required])],
@@ -42,7 +54,8 @@ export class FunkoEditComponent implements OnInit {
       imageComplete: ['', Validators.compose([Validators.required])],
       imageSolo: ['', Validators.compose([Validators.required])]
     });
-  }
+  } 
+  */
 
   // Accessing form control using getters
   get name() {
