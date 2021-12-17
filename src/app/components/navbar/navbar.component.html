@@ -74,15 +74,6 @@
             <div class="container-fluid">
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div ngbDropdown class="d-inline-block" style="padding-inline-end: 0%;" *ngIf="userLogged|async as user">
-                        <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>
-                            Funko Pop
-                        </button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                          <button ngbDropdownItem routerLink="/funko-list">Ver lista</button>
-                        </div>
-                    </div>
-                    &nbsp;
                     <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user">
                         <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>
                             Pokemon
