@@ -9,6 +9,7 @@ import { IronManFunkoService } from '../../services/iron-man-funko.service';
 })
 export class FunkoListComponent implements OnInit {
   ironManFunkos: FunkoIronMan[] = [];
+  p: number = 1; 
 
   constructor(private _ironManFunkoService: IronManFunkoService) { }
 
@@ -17,8 +18,19 @@ export class FunkoListComponent implements OnInit {
   }
 
 
-  obtenerFunkosIronMan() {
-    throw new Error('Method not implemented.');
+  private obtenerFunkosIronMan() {
+    let s = this._ironManFunkoService.obtenerFunkosIronMan();
+    s.snapshotChanges().subscribe(item => {
+      this.ironManFunkos = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.ironManFunkos.push(x as FunkoIronMan);
+      });
+      console.log(this.ironManFunkos);
+    });
   }
+
+
 
 }
