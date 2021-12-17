@@ -13,6 +13,7 @@ import { IronManFunkoService } from '../../services/iron-man-funko.service'
 })
 export class FunkoEditComponent implements OnInit {
   public funkoEditForm: FormGroup;
+  urlImage: string;
   imagenes: any[] = [];
 
   constructor(private _formBuilder: FormBuilder,
@@ -24,8 +25,9 @@ export class FunkoEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.actRoute.snapshot.paramMap.get('id');
-    console.log(id);
     this._ironManFunkoService.obtenerFunkoIronMan(id).valueChanges().subscribe(funko => {
+      console.log(funko);
+      this.urlImage = funko.imageComplete;
       this.initForm(funko);
       this.funkoEditForm.setValue(funko);
     });
@@ -38,7 +40,7 @@ export class FunkoEditComponent implements OnInit {
       description: [funko ? funko.description : '', Validators.compose([Validators.required])],
       collectionNumber: [funko ? funko.collectionNumber : '', Validators.compose([Validators.required])],
       imageComplete: ['', Validators.compose([Validators.required])],
-      imageSolo: ['', Validators.compose([Validators.required])],
+      imageSolo: ['', Validators.compose([Validators.required])]
     });
   }
 
@@ -61,6 +63,7 @@ export class FunkoEditComponent implements OnInit {
   get imageSolo() {
     return this.funkoEditForm.get('imageSolo');
   }
+
 
   public onSubmit() {
     console.log(this.funkoEditForm.value);
