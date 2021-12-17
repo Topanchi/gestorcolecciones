@@ -8,7 +8,7 @@
 <!-- | paginate: { itemsPerPage: 6, currentPage: p }; let i = index; -->
 <div class="album py-5 bg-light">
   <div class="row">
-    <div *ngFor="let item of ironManFunkos" class="col-md-4">
+    <div *ngFor="let item of ironManFunkos | paginate: { itemsPerPage: 6, currentPage: p }; let i = index; " class="col-md-4">
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
@@ -31,5 +31,5 @@
   </div>
 </div>
 
-<!-- <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls> -->
+<pagination-controls (pageChange)="p = $event" ></pagination-controls> <!-- autoHide="true" responsive="true" -->
 

@@ -14,7 +14,6 @@ import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { ToastrModule } from 'ngx-toastr';
     AngularFirestoreModule,
     AngularFireStorageModule,
     NoopAnimationsModule,
-    NgxPaginationModule,
     ToastrModule.forRoot(),
   ],
   providers: [],

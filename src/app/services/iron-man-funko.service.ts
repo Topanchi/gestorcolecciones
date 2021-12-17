@@ -42,9 +42,7 @@ export class IronManFunkoService {
     this._db.database.ref('funkos/' + funko.$key).update({
       name: funko.name,
       description: funko.description,
-      collectionNumber: funko.collectionNumber,
-      imageComplete: funko.imageComplete,
-      imageSolo: funko.imageSolo    
+      collectionNumber: funko.collectionNumber   
     });
   }
 
