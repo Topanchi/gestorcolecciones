@@ -25,37 +25,44 @@ export class FunkoEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.actRoute.snapshot.paramMap.get('id');
+    this.obtenerDatosFunko(id);
+  }
+
+  private obtenerDatosFunko(id: string) {
     this._ironManFunkoService.obtenerFunkoIronMan(id).valueChanges().subscribe(funko => {
       console.log(funko);
       this.urlImage = funko.imageComplete;
       this.initForm(funko);
-      this.funkoEditForm.setValue(funko);
+      this.setFormValues(funko);
     });
   }
-
-  private initForm(funko: FunkoIronMan) {
+ 
+  /* private initForm(funko: FunkoIronMan) {
     this.funkoEditForm = new FormGroup({
       name: new FormControl(funko ? funko.name : '', Validators.compose([Validators.required])),
       personaje: new FormControl(funko ? funko.personaje : '', Validators.compose([Validators.required])),
       description: new FormControl(funko ? funko.description : '', Validators.compose([Validators.required])),
       collectionNumber: new FormControl(funko ? funko.collectionNumber : '', Validators.compose([Validators.required])),
-      imageComplete: new FormControl('', Validators.compose([Validators.required])),
-      imageSolo: new FormControl('', Validators.compose([Validators.required]))
     });
-  }
+  } */
 
-  /* 
+  /* */
   private initForm(funko: FunkoIronMan) {
     this.funkoEditForm = this._formBuilder.group({
       name: [funko ? funko.name : '', Validators.compose([Validators.required])],
       personaje: [funko ? funko.personaje : '', Validators.compose([Validators.required])],
       description: [funko ? funko.description : '', Validators.compose([Validators.required])],
       collectionNumber: [funko ? funko.collectionNumber : '', Validators.compose([Validators.required])],
-      imageComplete: ['', Validators.compose([Validators.required])],
-      imageSolo: ['', Validators.compose([Validators.required])]
     });
   } 
-  */
+  
+
+  private setFormValues(funko: any) {
+    this.funkoEditForm.controls['name'].setValue(funko.name);
+    this.funkoEditForm.controls['personaje'].setValue(funko.personaje);
+    this.funkoEditForm.controls['description'].setValue(funko.description);
+    this.funkoEditForm.controls['collectionNumber'].setValue(funko.collectionNumber);
+  }
 
   // Accessing form control using getters
   get name() {
@@ -70,12 +77,7 @@ export class FunkoEditComponent implements OnInit {
   get collectionNumber() {
     return this.funkoEditForm.get('collectionNumber');
   }
-  get imageComplete() {
-    return this.funkoEditForm.get('imageComplete');
-  }
-  get imageSolo() {
-    return this.funkoEditForm.get('imageSolo');
-  }
+
 
 
   public onSubmit() {
@@ -85,32 +87,4 @@ export class FunkoEditComponent implements OnInit {
     this._notificationService.showSuccess('Funko editado correctamente',("Info"));
     this.router.navigate(['funko-list']);
   }
-
-  public cargarImagen(event: any){
-    console.log("cargar imagen");
-    let archivos = event.target.files;
-    let nombre = "jonathan";
-
-    for (let i = 0; i < archivos.length; i++) {
-
-      let reader = new FileReader();
-      reader.readAsDataURL(archivos[0]);
-      reader.onloadend = () => {
-        console.log(reader.result);
-        this.imagenes.push(reader.result);
-        /*
-        this.storageService.subirImagen(nombre + "_" + Date.now(), reader.result).then(urlImagen => {
-          let usuario = {
-            name: "jonathan",
-            nickName: "yonykikok",
-            password: "401325",
-            imgProfile: urlImagen
-          }
-          console.log(urlImagen);
-        });
-        */
-      }
-    }
-  }
-
 }
