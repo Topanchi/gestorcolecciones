@@ -1,1 +1,40 @@
-<p>funko-edit works!</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Editar funko</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+       <div class="btn-group">
+          <button class="btn btn-warning" routerLink="/funko-list">Volver</button>
+       </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <form [formGroup]="funkoEditForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombrede la marca">
+            </div>
+            <div class="form-group">
+                <label for="personaje">Personaje</label>
+                <input type="text" class="form-control" id="personaje" formControlName="personaje" placeholder="Personaje asociado">
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <input type="text" class="form-control" id="description" formControlName="description" placeholder="Descripción">
+            </div>
+            <div class="form-group">
+                <label for="collectionNumber">Número de colección</label>
+                <input type="text" class="form-control" id="collectionNumber" formControlName="collectionNumber" placeholder="Númerode colección">
+            </div>
+            <div class="form-group">
+                <label for="imageComplete">Imagen completa</label><br>
+                <input type="file" (change)="cargarImagen($event)" accept=".png,.jpg" formControlName="imageComplete" />
+            </div>
+            <div class="form-group">
+                <label for="imageSolo">Imagen sola</label><br>
+                <input type="file" (change)="cargarImagen($event)" accept=".png,.jpg" formControlName="imageSolo" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block m-2">Editar</button>
+        </form>
+    </div>
+</div>  
