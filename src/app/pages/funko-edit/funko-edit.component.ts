@@ -13,6 +13,7 @@ import { IronManFunkoService } from '../../services/iron-man-funko.service'
 })
 export class FunkoEditComponent implements OnInit {
   public funkoEditForm: FormGroup;
+  public funkoIronMan: FunkoIronMan;
   urlImage: string;
   imagenes: any[] = [];
 
@@ -25,6 +26,8 @@ export class FunkoEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.actRoute.snapshot.paramMap.get('id');
+    console.log(id);
+    console.log(typeof id);
     this.obtenerDatosFunko(id);
   }
 
@@ -32,6 +35,7 @@ export class FunkoEditComponent implements OnInit {
     this._ironManFunkoService.obtenerFunkoIronMan(id).valueChanges().subscribe(funko => {
       console.log(funko);
       this.urlImage = funko.imageComplete;
+      //this.funkoIronMan.imageSolo = funko.imageSolo;
       this.initForm(funko);
       this.setFormValues(funko);
     });
@@ -83,7 +87,20 @@ export class FunkoEditComponent implements OnInit {
   public onSubmit() {
     console.log(this.funkoEditForm.value);
     //TODO: enviar json a firebase para luego enlazarle la imagen
-    this._ironManFunkoService.agregarFunkoIronMan(this.funkoEditForm.value);
+
+    this.seteoObjetoFunko(this.funkoEditForm.value);
+  }
+
+  private seteoObjetoFunko(value: any) {
+    this.funkoIronMan = new FunkoIronMan(this.funkoIronMan.$key,
+                                          value.name, 
+                                          value.personaje, 
+                                          value.description, 
+                                          value.collectionNumber, 
+                                          this.urlImage, 
+                                          this.funkoIronMan.imageSolo);
+
+    this._ironManFunkoService.actualizarFunkoIronMan(this.funkoIronMan);
     this._notificationService.showSuccess('Funko editado correctamente',("Info"));
     this.router.navigate(['funko-list']);
   }
