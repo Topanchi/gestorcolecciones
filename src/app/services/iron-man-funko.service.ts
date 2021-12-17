@@ -38,12 +38,11 @@ export class IronManFunkoService {
   // Update Key Object
   //TODO: revisar sintaxis de update con nueva actualizacion de firebase
   actualizarFunkoIronMan(funko: FunkoIronMan) {
-    this.funkoRef.update({
+    console.log("objeto a editar: ",funko);
+    this._db.database.ref('funkos/' + funko.$key).update({
       name: funko.name,
       description: funko.description,
-      collectionNumber: funko.collectionNumber,
-      imageComplete: funko.imageComplete,
-      imageSolo: funko.imageSolo
+      collectionNumber: funko.collectionNumber   
     });
   }
 

@@ -27,6 +27,7 @@ export class FunkoAddComponent implements OnInit {
   private initForm() {
     this.funkoForm = this._formBuilder.group({
       name: ['', Validators.compose([Validators.required])],
+      personaje: ['', Validators.compose([Validators.required])],
       description: ['', Validators.compose([Validators.required])],
       collectionNumber: ['', Validators.compose([Validators.required])],
       imageComplete: ['', Validators.compose([Validators.required])],
@@ -37,6 +38,9 @@ export class FunkoAddComponent implements OnInit {
   // Accessing form control using getters
   get name() {
     return this.funkoForm.get('name');
+  }
+  get personaje() {
+    return this.funkoForm.get('personaje');
   }
   get description() {
     return this.funkoForm.get('description');

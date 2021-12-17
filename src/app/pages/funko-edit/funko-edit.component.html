@@ -1,1 +1,52 @@
-<p>funko-edit works!</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Editar funko</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+       <div class="btn-group">
+          <button class="btn btn-warning" routerLink="/funko-list">Volver</button>
+       </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pricing-header form-block mx-auto">
+            <form [formGroup]="funkoEditForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-lg-5 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label for="name">Marca</label>
+                            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombre de la marca">
+                        </div>
+                        <div class="form-group">
+                            <label for="personaje">Personaje</label>
+                            <input type="text" class="form-control" id="personaje" formControlName="personaje" placeholder="Personaje asociado">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <input type="text" class="form-control" id="description" formControlName="description" placeholder="Descripción">
+                        </div>
+                        <div class="form-group">
+                            <label for="collectionNumber">Número de colección</label>
+                            <input type="text" class="form-control" id="collectionNumber" formControlName="collectionNumber" placeholder="Número de colección">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 col-sm-12">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <img src="{{this.urlImage}}" alt="">
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                           
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block m-2">Editar</button>
+            </form>
+        </div>
+        
+    </div>
+</div>  
