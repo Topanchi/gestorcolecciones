@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"  style="padding: 20px;">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom bordecito">
     <h1 class="" style="align-content: center;">Funkos registrados</h1>
     <a routerLink="/funko-add" class="btn btn-success" >
       <em class="fas fa-plus custom-fa-plus"></em>
@@ -6,7 +6,7 @@
     </a>
 </div>
 <!-- | paginate: { itemsPerPage: 6, currentPage: p }; let i = index; -->
-<div class="album py-5 bg-light">
+<div class="album py-5 bg-light bordecito">
   <div class="row" style="padding: 20px;">
     <div *ngFor="let item of ironManFunkos | paginate: { itemsPerPage: 6, currentPage: p }; let i = index; " class="col-md-4">
       <mat-card class="example-card">
