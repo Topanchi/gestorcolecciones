@@ -22,6 +22,12 @@ export class PrecioPipe implements PipeTransform {
         return '15 USD';
       case 35:
         return '35 USD';
+      case 20:
+        return '20 USD';
+      case 30:
+        return '30 USD';
+      case 40:
+        return '40 USD';
       default:
         return 'SIN PRECIO';
     }
