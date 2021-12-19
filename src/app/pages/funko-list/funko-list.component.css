@@ -21,36 +21,7 @@ img {
 }
 
 .fondo {
-  background-color: rgb(255, 0, 51);
-  color: rgb(255, 255, 255);
-}
-
-.fondoMarvel {
-  background-image: url('https://logodownload.org/wp-content/uploads/2017/05/marvel-logo-4.png');
-  background-size: cover;
-}
-
-.fondoAvengers {
-  background-image: url('http://assets.stickpng.com/images/5842a4fea6515b1e0ad75af7.png');
-  background-size: cover;
-}
-
-.fondoAvengers2 {
-  background-image: url('https://e7.pngegg.com/pngimages/152/852/png-clipart-ultron-black-widow-captain-america-hulk-iron-man-avengers-logo-marvel-avengers-assemble-fictional-characters.png');
-  background-size: cover;
-}
-
-.fondoAvengers3 {
-  background-image: url('https://www.pngfind.com/pngs/m/51-510476_avengers-infinity-war-movie-review-the-day-creek.png');
-  background-size: cover;
-}
-
-.fondoAvengers4 {
-  background-image: url('https://image.pngaaa.com/246/1510246-middle.png');
-  background-size: cover;
-}
-
-.fondoAvengersGame {
-  background-image: url('https://i0.wp.com/tuzonagamer.com/wp-content/uploads/2020/09/marvels-avengers-logo-01-ps4-22jan19-en-us1446873939176572911.png?ssl=1');
-  background-size: cover;
+  /* background-color: rgb(247, 247, 247); */
+  color: rgb(255, 0, 0);
+  
 }
