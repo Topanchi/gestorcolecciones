@@ -37,7 +37,8 @@ export class AuthService {
     }
   }
 
-  getUserLogged() {
+  getUserLoggedStatus() {
+    console.log("getUserLoggedStatus", this.afauth.authState);
     return this.afauth.authState;
   }
 
