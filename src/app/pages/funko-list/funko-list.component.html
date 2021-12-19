@@ -13,12 +13,15 @@
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>{{item.name}}</mat-card-title>
-          <mat-card-subtitle>{{item.collectionNumber}}</mat-card-subtitle>
+          <mat-card-subtitle>N° {{item.collectionNumber}}</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="{{item.imageSolo}}" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <p>
             {{item.description}}
+          </p>
+          <p>
+            Precio: <strong>{{item.price | precio}}</strong>
           </p>
         </mat-card-content>
         <mat-card-actions>
