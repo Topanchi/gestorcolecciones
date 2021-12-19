@@ -28,6 +28,7 @@ export class IronManFunkoService {
   agregarFunkoIronMan(funko: FunkoIronMan) {
     this._db.database.ref('funkos').push().set({
       name: funko.name,
+      personaje: funko.personaje,
       description: funko.description,
       collectionNumber: funko.collectionNumber,
       imageComplete: funko.imageComplete,
@@ -41,6 +42,7 @@ export class IronManFunkoService {
     console.log("objeto a editar: ",funko);
     this._db.database.ref('funkos/' + funko.$key).update({
       name: funko.name,
+      personaje: funko.personaje,
       description: funko.description,
       collectionNumber: funko.collectionNumber   
     });

@@ -32,6 +32,7 @@ export class FunkoAddComponent implements OnInit {
       collectionNumber: ['', Validators.compose([Validators.required])],
       imageComplete: ['', Validators.compose([Validators.required])],
       imageSolo: ['', Validators.compose([Validators.required])],
+      price: ['', Validators.compose([Validators.required])]
     });
   }
 
@@ -47,6 +48,9 @@ export class FunkoAddComponent implements OnInit {
   }  
   get collectionNumber() {
     return this.funkoForm.get('collectionNumber');
+  }
+  get price() {
+    return this.funkoForm.get('price');
   }
   get imageComplete() {
     return this.funkoForm.get('imageComplete');

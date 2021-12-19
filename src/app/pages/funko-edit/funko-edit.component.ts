@@ -57,6 +57,7 @@ export class FunkoEditComponent implements OnInit {
       personaje: [funko ? funko.personaje : '', Validators.compose([Validators.required])],
       description: [funko ? funko.description : '', Validators.compose([Validators.required])],
       collectionNumber: [funko ? funko.collectionNumber : '', Validators.compose([Validators.required])],
+      price: [funko ? funko.price : '', Validators.compose([Validators.required])],
     });
   } 
   
@@ -66,6 +67,7 @@ export class FunkoEditComponent implements OnInit {
     this.funkoEditForm.controls['personaje'].setValue(funko.personaje);
     this.funkoEditForm.controls['description'].setValue(funko.description);
     this.funkoEditForm.controls['collectionNumber'].setValue(funko.collectionNumber);
+    this.funkoEditForm.controls['price'].setValue(funko.price);
   }
 
   // Accessing form control using getters
@@ -80,6 +82,9 @@ export class FunkoEditComponent implements OnInit {
   }  
   get collectionNumber() {
     return this.funkoEditForm.get('collectionNumber');
+  }
+  get price() {
+    return this.funkoEditForm.get('price');
   }
 
 
@@ -97,6 +102,7 @@ export class FunkoEditComponent implements OnInit {
                                           value.personaje, 
                                           value.description, 
                                           value.collectionNumber, 
+                                          value.price,
                                           this.urlImage, 
                                           this.funkoIronMan.imageSolo);
 
