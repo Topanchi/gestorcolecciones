@@ -19,3 +19,9 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+.fondo {
+  /* background-color: rgb(247, 247, 247); */
+  color: rgb(255, 0, 0);
+  
+}
