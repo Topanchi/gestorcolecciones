@@ -4,40 +4,42 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
+    
     path: '', 
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
   {
-    canActivate: [],
+    canActivate: [AuthGuard],
     path: 'login', 
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
   },
   {
+    canActivate: [AuthGuard],
     path: 'register', 
     loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule),
   },
   {
-    canActivate: [AuthGuard],
+    canActivate: [],
     path:'funko-list', 
     loadChildren: () => import('./pages/funko-list/funko-list.module').then(m => m.FunkoListModule),
   },
   {
-    canActivate: [AuthGuard],
+    canActivate: [],
     path:'funko-detail/:id', 
     loadChildren: () => import('./pages/funko-detail/funko-detail.module').then(m => m.FunkoDetailModule),
   },
   {
-    canActivate: [AuthGuard],
+    canActivate: [],
     path:'funko-edit/:id', 
     loadChildren: () => import('./pages/funko-edit/funko-edit.module').then(m => m.FunkoEditModule),
   },
   {
-    canActivate: [AuthGuard],
+    canActivate: [],
     path:'funko-add', 
     loadChildren: () => import('./pages/funko-add/funko-add.module').then(m => m.FunkoAddModule),
   },
   {
-    canActivate: [AuthGuard],
+    canActivate: [],
     path: '**', 
     loadChildren: () => import('./pages/pages-not-found/pages-not-found.module').then(m => m.PagesNotFoundModule),
   }
