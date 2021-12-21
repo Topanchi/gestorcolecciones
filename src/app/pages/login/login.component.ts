@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   ingresar() {
     const { email, password } = this.usuario;
     this.authService.login(email, password).then(res => {
-      console.log("se registró: ", res);
+      console.log("Ingresó: ", res);
       if(!res?.user?.isAnonymous){
         this.route.navigate(['/home']);
       }
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   ingresarConGoogle() {
     const { email, password } = this.usuario;
     this.authService.loginWithGoogle(email, password).then(res => {
-      console.log("se registró: ", res);
+      console.log("ingresó: ", res);
       if(!res?.user?.isAnonymous){
         this.route.navigate(['/home']);
       }
