@@ -1,45 +1,3 @@
-<!-- <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand" href="#">
-        <img src="https://www.gstatic.com/devrel-devsite/prod/v7385327dc46d08b8dfdb825d1a873cb039e1740549bdbb7e3c982c2f1dbdd48e/firebase/images/touchicon-180.png"
-            width="30" height="30" class="d-inline-block align-top" alt="">
-        Sistema de Gestión de Colecciones
-    </a>
-
-    <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user">
-        <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>
-            Funko Pop
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem routerLink="/funko-list">Ver lista</button>
-        </div>
-    </div>
-    <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user">
-        <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>
-            Pokemon
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem routerLink="#">Ver pokedex</button>
-        </div>
-    </div>
-
-    <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user; else btnIngresar">
-        <button class="btn btn-outline-primary btn-sm" id="dropdownBasic1" ngbDropdownToggle>
-            <img style="border-radius: 100%;" *ngIf="user.photoURL" src="{{user.photoURL}}"
-            width="30" height="30" class="d-inline-block align-top" alt="">
-            {{user.displayName ? user.displayName : user.email}}
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem (click)="logout()">Salir</button>
-        </div>
-    </div>
-
-    <ng-template #btnIngresar>
-        <button class="btn btn-outline-primary btn-sm" routerLink="/login">
-            Ingresar
-        </button>
-    </ng-template>
-    
-</nav> -->
 
 <div class="wrapper">
     <!-- SIDEBAR -->
@@ -53,7 +11,7 @@
                 <a href="#">Dashboard</a>
             </li>
             <li class="">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     Funkos
                 </a>
 
@@ -70,7 +28,7 @@
     <!-- MAINCONTENT -->
     <div id="content">
 
-        <nav class="navbar navbar-expand-lg fixed- flex-md-nowrap back">  
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark fixed- flex-md-nowrap back">  
             <div class="container-fluid">
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -82,9 +40,9 @@
                           <button ngbDropdownItem routerLink="#">Ver pokedex</button>
                         </div>
                     </div>
-                  
                 </div>
-              </div>   
+
+            </div>   
             
     
             <div ngbDropdown class="d-inline-block" *ngIf="userLogged|async as user; else btnIngresar">
@@ -94,7 +52,7 @@
                     {{user.displayName ? user.displayName : user.email}}
                 </button>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button ngbDropdownItem (click)="logout()">Salir</button>
+                <button ngbDropdownItem (click)="logout()">Salir</button>
                 </div>
             </div>
         
