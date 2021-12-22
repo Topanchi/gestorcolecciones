@@ -62,39 +62,32 @@
         <h2>Indicadores de Bitcoin</h2>
         <table class="table table-dark">
             <thead>
-              <tr>
-                <td *ngFor="let title of titles">
-                  {{ title }}
-                </td>
-              </tr>
+                <tr>
+                    <td *ngFor="let title of titles">
+                    {{ title }}
+                    </td>
+                </tr>
             </thead>
     
             <tbody>
-              <tr *ngFor="let coin of filteredCoints | paginate: { itemsPerPage: 10, currentPage: p }; let i = index; ">
-                <td>{{ i + 1 }}</td>
-                <td>
-                  <img
-                    [src]="coin.image"
-                    alt="{{ coin.name }}"
-                    style="width: 2rem"
-                    class="img-fluid me-4"
-                  />
-                  <span>{{ coin.name }}</span>
-                  <span class="ms-3 text-muted text-uppercase">{{ coin.symbol }}</span>
-                </td>
-                <td>{{ coin.current_price.toLocaleString() }}</td>
-    
-                <td
-                  [ngClass]="
-                    coin.price_change_percentage_24h > 0
-                      ? 'text-success'
-                      : 'text-danger'
-                  "
-                >
-                  {{ coin.price_change_percentage_24h }}
-                </td>
-                <td>{{ coin.total_volume.toLocaleString() }}</td>
-              </tr>
+                <tr *ngFor="let coin of filteredCoints | paginate: { itemsPerPage: 10, currentPage: p }; let i = index; ">
+                    <td>{{ i + 1 }}</td>
+                    <td>
+                        <img [src]="coin.image"
+                            alt="{{ coin.name }}"
+                            style="width: 2rem"
+                            class="img-fluid me-4"/>
+                        <span>{{ coin.name }}</span>
+                        <span class="ms-3 text-muted text-uppercase">{{ coin.symbol }}</span>
+                    </td>
+                    <td>{{ coin.current_price.toLocaleString() }}</td>
+                    <td [ngClass]="coin.price_change_percentage_24h > 0
+                        ? 'text-success'
+                        : 'text-danger'">
+                        {{ coin.price_change_percentage_24h }}
+                    </td>
+                    <td>{{ coin.total_volume.toLocaleString() }}</td>
+                </tr>
             </tbody>
         </table>
         <pagination-controls (pageChange)="p = $event" ></pagination-controls> <!-- autoHide="true" responsive="true" -->
