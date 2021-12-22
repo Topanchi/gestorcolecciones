@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  urlDolar: 'https://mindicador.cl/api',
+  urlBitCoin: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false',
   firebaseConfig : {
     apiKey: "AIzaSyA-4jU7TzrE0Ror0JYCgivhXkTk0mlT_Tw",
     authDomain: "gestordecolecciones.firebaseapp.com",

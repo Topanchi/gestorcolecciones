@@ -14,47 +14,92 @@
         </nav>
     </div>
     <br>
-    <div class="col-md-4 col-sm-4">
+    <div class="col-md-4 col-sm-4 bordecito">
         <div class="wrimagecard wrimagecard-topimage">
             <a href="#">
                 <div class="wrimagecard-topimage_header" style="background-color:rgba(187, 120, 36, 0.1) ">
-                    <i class="fa fa-users" style="color:#BB7824"></i>
+                    <i class="fa fa-usd" style="color:#BB7824"></i>
                 </div>
                 <div class="wrimagecard-topimage_title">
                     <h4>Dolar hoy
-                        <div class="pull-right badge">18</div>
+                        <div class="pull-right badge">${{dolar}}</div>
                     </h4>
                 </div>
             </a>
         </div>
     </div>
-    <div class="col-md-4 col-sm-4">
+    <div class="col-md-4 col-sm-4 bordecito">
         <div class="wrimagecard wrimagecard-topimage">
             <a href="#">
                 <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
-                    <i class="fa fa-shopping-cart" style="color:#16A085"></i>
+                    <i class="fa fa-balance-scale" style="color:#16A085"></i>
                 </div>
                 <div class="wrimagecard-topimage_title">
                     <h4>UF
-                        <div class="pull-right badge" id="WrControls">25</div>
+                        <div class="pull-right badge" id="WrControls">${{uf}}</div>
                     </h4>
                 </div>
             </a>
         </div>
     </div>
-    <div class="col-md-4 col-sm-4">
+    <div class="col-md-4 col-sm-4 bordecito">
         <div class="wrimagecard wrimagecard-topimage">
             <a href="#">
                 <div class="wrimagecard-topimage_header" style="background-color:  rgba(213, 15, 37, 0.1)">
-                    <i class="fa fa-inbox" style="color:#d50f25"> </i>
+                    <i class="fa fa-calendar" style="color:#d50f25"> </i>
                 </div>
                 <div class="wrimagecard-topimage_title">
                     <h4>Fecha
-                        <div class="pull-right badge" id="WrForms">68</div>
+                        <div class="pull-right badge" id="WrForms">{{fechaHoy | date: 'dd-MM-yyyy'}}</div>
                     </h4>
                 </div>
 
             </a>
         </div>
     </div>
+
+    <div class="col-md-12 col-sm-4 bordecito">
+        <h2>Indicadores de Bitcoin</h2>
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <td *ngFor="let title of titles">
+                  {{ title }}
+                </td>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <tr *ngFor="let coin of filteredCoints | paginate: { itemsPerPage: 10, currentPage: p }; let i = index; ">
+                <td>{{ i + 1 }}</td>
+                <td>
+                  <img
+                    [src]="coin.image"
+                    alt="{{ coin.name }}"
+                    style="width: 2rem"
+                    class="img-fluid me-4"
+                  />
+                  <span>{{ coin.name }}</span>
+                  <span class="ms-3 text-muted text-uppercase">{{ coin.symbol }}</span>
+                </td>
+                <td>{{ coin.current_price.toLocaleString() }}</td>
+    
+                <td
+                  [ngClass]="
+                    coin.price_change_percentage_24h > 0
+                      ? 'text-success'
+                      : 'text-danger'
+                  "
+                >
+                  {{ coin.price_change_percentage_24h }}
+                </td>
+                <td>{{ coin.total_volume.toLocaleString() }}</td>
+              </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" ></pagination-controls> <!-- autoHide="true" responsive="true" -->
+    </div>
+    
+
+    
 </div>

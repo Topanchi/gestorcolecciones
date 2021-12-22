@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Coin } from '../../models/coin';
+import { DashboardService } from '../../services/dashboard.service';
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  p: number = 1; 
+  public fechaHoy = new Date();
+  public dolar: any;
+  public uf: any;
+  public coins: any;
+  titles: string[] = ['#', 'Coin', 'Precio', 'Price Change', '24H Volume'];
+  filteredCoints: Coin[] = [];
 
-  constructor() { }
+  constructor(private _dashboardService: DashboardService) { }
 
   ngOnInit(): void {
+    this.obtenerDolar();
+    this.obtenerBitCoin();
+  }
+
+  private obtenerDolar() {
+   this._dashboardService.obtenerDolar().subscribe(
+      (res: any) => {
+        console.log("res: ", res);
+        this.dolar = res.dolar.valor;
+        this.uf = res.uf.valor;
+      },
+      err => console.log(err)
+    ); 
+    
+  }
+
+  private obtenerBitCoin() {
+    this._dashboardService.obtenerBitCoin().subscribe(
+      (res: any) => {
+        console.log("res: ", res);
+        this.coins = res;
+        this.filteredCoints = this.coins;
+      },
+      err => console.log(err)
+    );
   }
 
 }
