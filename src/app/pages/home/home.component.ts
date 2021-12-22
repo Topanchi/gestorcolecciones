@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   public dolar: any;
   public uf: any;
   public coins: any;
-  titles: string[] = ['#', 'Coin', 'Precio', 'Price Change', '24H Volume'];
+  titles: string[] = ['#', 'Moneda', 'Precio', 'Variaciones', 'Nivel de volumen de 24 hrs'];
   filteredCoints: Coin[] = [];
 
   constructor(private _dashboardService: DashboardService) { }
