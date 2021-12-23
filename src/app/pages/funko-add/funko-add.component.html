@@ -20,39 +20,41 @@
     <p class="custom-text">Porfavor complete los campos...
     </p>
 </div>
+<div class="container">
+    <div class="row bordecito">
+        <div class="col-md-12">
+            <form [formGroup]="funkoForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombrede la marca">
+                </div>
+                <div class="form-group">
+                    <label for="personaje">Personaje</label>
+                    <input type="text" class="form-control" id="personaje" formControlName="personaje" placeholder="Personaje asociado">
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <input type="text" class="form-control" id="description" formControlName="description" placeholder="Descripción">
+                </div>
+                <div class="form-group">
+                    <label for="collectionNumber">Número de colección</label>
+                    <input type="text" class="form-control" id="collectionNumber" formControlName="collectionNumber" placeholder="Númerode colección">
+                </div>
+                <div class="form-group">
+                    <label for="price">Precio</label>
+                    <input type="text" class="form-control" id="price" formControlName="price" placeholder="Precio">
+                </div>
+                <div class="form-group">
+                    <label for="imageComplete">Imagen completa</label><br>
+                    <input type="file" (change)="cargarImagen($event)" accept=".png,.jpg" formControlName="imageComplete" />
+                </div>
+                <div class="form-group">
+                    <label for="imageSolo">Imagen sola</label><br>
+                    <input type="file" (change)="cargarImagen($event)" accept=".png,.jpg" formControlName="imageSolo" />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block m-2">Añadir</button>
+            </form>
+        </div>
+    </div>    
+</div>
 
-<div class="row bordecito">
-    <div class="col-md-12">
-        <form [formGroup]="funkoForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="name">Nombre</label>
-                <input type="text" class="form-control" id="name" formControlName="name" placeholder="Nombrede la marca">
-            </div>
-            <div class="form-group">
-                <label for="personaje">Personaje</label>
-                <input type="text" class="form-control" id="personaje" formControlName="personaje" placeholder="Personaje asociado">
-            </div>
-            <div class="form-group">
-                <label for="description">Descripción</label>
-                <input type="text" class="form-control" id="description" formControlName="description" placeholder="Descripción">
-            </div>
-            <div class="form-group">
-                <label for="collectionNumber">Número de colección</label>
-                <input type="text" class="form-control" id="collectionNumber" formControlName="collectionNumber" placeholder="Númerode colección">
-            </div>
-            <div class="form-group">
-                <label for="price">Precio</label>
-                <input type="text" class="form-control" id="price" formControlName="price" placeholder="Precio">
-            </div>
-            <div class="form-group">
-                <label for="imageComplete">Imagen completa</label><br>
-                <input type="file" (change)="cargarImagen($event)" accept=".png,.jpg" formControlName="imageComplete" />
-            </div>
-            <div class="form-group">
-                <label for="imageSolo">Imagen sola</label><br>
-                <input type="file" (change)="cargarImagen($event)" accept=".png,.jpg" formControlName="imageSolo" />
-            </div>
-            <button type="submit" class="btn btn-primary btn-block m-2">Añadir</button>
-        </form>
-    </div>
-</div>    
