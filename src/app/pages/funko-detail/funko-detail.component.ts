@@ -23,6 +23,7 @@ export class FunkoDetailComponent implements OnInit {
   private obtenerFunkosIronMan(id: string) {
     this._funkoService.obtenerFunkoIronMan(id).valueChanges().subscribe((funko: FunkoIronMan) => {
       console.log(funko);
+      this.funkoIronMan = funko;
     });
   }
 
