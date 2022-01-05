@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
               title: 'Debe iniciar sesión',
               showDenyButton: false,
               showCancelButton: false,
-              confirmButtonText: 'Sí',
+              confirmButtonText: 'Ok',
               denyButtonText: `No`,
             }).then((result) => {
               
