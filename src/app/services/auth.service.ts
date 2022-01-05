@@ -43,6 +43,7 @@ export class AuthService {
   }
 
   logout() {
-    this.afauth.signOut();
+    let f = this.afauth.signOut();
+    console.log("logout", f);
   }
 }
