@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { UserGuard } from './guards/user.guard';
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/funko-detail/funko-detail.module').then(m => m.FunkoDetailModule),
   },
   {
-    canActivate: [],
+    canActivate: [UserGuard],
     path:'funko-edit/:id', 
     loadChildren: () => import('./pages/funko-edit/funko-edit.module').then(m => m.FunkoEditModule),
   },
