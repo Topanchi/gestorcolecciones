@@ -26,31 +26,18 @@ export class FunkoEditComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.actRoute.snapshot.paramMap.get('id');
-    console.log(id);
-    console.log(typeof id);
     this.obtenerDatosFunko(id);
   }
 
   private obtenerDatosFunko(id: string) {
     this._ironManFunkoService.obtenerFunkoIronMan(id).valueChanges().subscribe(funko => {
-      console.log(funko);
       this.urlImage = funko.imageComplete;
       //this.funkoIronMan.imageSolo = funko.imageSolo;
       this.initForm(funko);
       this.setFormValues(funko);
     });
   }
- 
-  /* private initForm(funko: FunkoIronMan) {
-    this.funkoEditForm = new FormGroup({
-      name: new FormControl(funko ? funko.name : '', Validators.compose([Validators.required])),
-      personaje: new FormControl(funko ? funko.personaje : '', Validators.compose([Validators.required])),
-      description: new FormControl(funko ? funko.description : '', Validators.compose([Validators.required])),
-      collectionNumber: new FormControl(funko ? funko.collectionNumber : '', Validators.compose([Validators.required])),
-    });
-  } */
 
-  /* */
   private initForm(funko: FunkoIronMan) {
     this.funkoEditForm = this._formBuilder.group({
       name: [funko ? funko.name : '', Validators.compose([Validators.required])],
