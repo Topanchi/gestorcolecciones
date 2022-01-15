@@ -27,7 +27,6 @@ export class FunkoListComponent implements OnInit {
         x["$key"] = element.key;
         this.ironManFunkos.push(x as FunkoIronMan);
       });
-      console.log(this.ironManFunkos);
     });
   }
 

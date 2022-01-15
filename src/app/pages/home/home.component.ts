@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
   private obtenerDolar() {
    this._dashboardService.obtenerDolar().subscribe(
       (res: any) => {
-        console.log("res: ", res);
         this.dolar = res.dolar.valor;
         this.uf = res.uf.valor;
       },
@@ -39,7 +38,6 @@ export class HomeComponent implements OnInit {
   private obtenerBitCoin() {
     this._dashboardService.obtenerBitCoin().subscribe(
       (res: any) => {
-        console.log("res: ", res);
         this.coins = res;
         this.filteredCoints = this.coins;
       },

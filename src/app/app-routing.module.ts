@@ -1,25 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { UserGuard } from './guards/user.guard';
 
 const routes: Routes = [
   {
-    
+    canActivate: [AuthGuard],
     path: '', 
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
   },
   {
-    canActivate: [AuthGuard],
     path: 'login', 
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule),
   },
   {
-    canActivate: [AuthGuard],
     path: 'register', 
     loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule),
   },
   {
-    canActivate: [],
+    canActivate: [AuthGuard],
     path:'funko-list', 
     loadChildren: () => import('./pages/funko-list/funko-list.module').then(m => m.FunkoListModule),
   },
@@ -29,12 +28,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/funko-detail/funko-detail.module').then(m => m.FunkoDetailModule),
   },
   {
-    canActivate: [],
+    canActivate: [UserGuard],
     path:'funko-edit/:id', 
     loadChildren: () => import('./pages/funko-edit/funko-edit.module').then(m => m.FunkoEditModule),
   },
   {
-    canActivate: [],
+    canActivate: [AuthGuard],
     path:'funko-add', 
     loadChildren: () => import('./pages/funko-add/funko-add.module').then(m => m.FunkoAddModule),
   },
