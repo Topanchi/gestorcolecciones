@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <span class="badge badge-primary">Home</span>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  <span class="badge badge-success">llavero-gallery</span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom bordecito">
+    <h1 class="" style="align-content: center;" *ngIf="hideWhenNoLlavero">Llaveros registrados {{llaveros.length}}</h1>
+    <h1 class="" style="align-content: center;" *ngIf="noData">Llaveros registrados {{llaveros.length}}</h1>
+    <a routerLink="/llavero-add" class="btn btn-success" >
+      <!----> <em class="fas fa-plus custom-fa-plus"></em> 
+      Añadir
+    </a>
+</div>
+
+<div class="album py-5 bg-light bordecito">
+  <div class="row padd">
+    <div *ngFor="let item of llaveros  | paginate: { itemsPerPage: 6, currentPage: p }; let i = index;" class="col-md-4">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{item.nombre}}</mat-card-title>
+          <mat-card-subtitle appHeaderimg>N° {{item.numero}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{item.img}}" alt="Foto del llavero {{item.numero}}">
+        <mat-card-content>
+          <p>
+            Material: <strong>{{item.material}}</strong>
+          </p>
+          <p>
+            País: <strong>{{item.pais != '' ? item.pais : "No especificado"}}</strong>
+          </p>
+          <p>
+            Comentarios: <strong>{{item.comentarios != '' ? item.comentarios : "No especificado"}}</strong>
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="row">
+          <div class="row">
+            <div class="col-6 text-center">
+              <button mat-button class="btn btn-warning align-items-center" routerLink="/llavero-edit/{{item.$key}}">Edit</button>
+            </div>
+            <div class="col-6 text-center">
+              <button mat-button class="btn btn-danger" (click)="deleteLlavero(item)">Delete</button>  
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+      <br>
+    </div>
+  </div>
+  <!-- Pagination -->
+  <pagination-controls (pageChange)="p = $event" ></pagination-controls><!-- autoHide="true" responsive="true" -->
+</div>

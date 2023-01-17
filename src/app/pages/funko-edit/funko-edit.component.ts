@@ -3,7 +3,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FunkoIronMan } from 'src/app/models/funko-iron-man';
-import { NotificationService } from 'src/app/services/notification.service';
+import { NotificationService } from '../../services/notification.service';
 import { IronManFunkoService } from '../../services/iron-man-funko.service'
 
 @Component({

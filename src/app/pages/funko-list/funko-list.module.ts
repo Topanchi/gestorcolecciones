@@ -11,14 +11,14 @@ import { HeaderimgDirective } from '../../directives/headerimg.directive';
 @NgModule({
   declarations: [
     FunkoListComponent,
-    PrecioPipe,
+    //PrecioPipe,
     HeaderimgDirective,
   ],
   imports: [
     CommonModule,
     FunkoListRoutingModule,
     MatCardModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ]
 })
 export class FunkoListModule { }

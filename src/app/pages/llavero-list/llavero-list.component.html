@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <span class="badge badge-primary">Home</span>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  <span class="badge badge-success">llavero-list</span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom bordecito">
+    <h1 class="" style="align-content: center;" *ngIf="hideWhenNoLlavero">Llaveros registrados {{Llavero.length}}</h1>
+    <h1 class="" style="align-content: center;" *ngIf="noData">Llaveros registrados {{Llavero.length}}</h1>
+    <a routerLink="/llavero-add" class="btn btn-success" >
+      <!----> <em class="fas fa-plus custom-fa-plus"></em> 
+      Añadir
+    </a>
+</div>
+
+<div class="pricing-header mx-auto album py-5 bg-light bordecito">
+
+  <!-- No data shows when their is no student data available -->
+  <div class="no-data text-center" *ngIf="noData">
+    
+    <p class="nodata-msg">No existen llaveros registrados aún!</p>
+    <a routerLink="/agregar-llavero" class="btn btn-success">
+      <em class="fas fa-plus custom-fa-plus"></em>
+      Añadir llavero
+    </a>
+  </div>
+
+  <!-- Showing students data -->
+  <div class="table-responsive" *ngIf="hideWhenNoLlavero">
+    <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Material</th>
+          <th class="text-center" scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- *ngFor loop iterates over Student array and fetch the student's data -->
+        <!-- paginate pipe will add pagination in student's list, it won't show if items are less then 7 -->
+        <tr *ngFor="let llavero of Llavero | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;">  
+          <td>{{llavero.numero}}</td>
+          <td>{{llavero.nombre}}</td>
+          <td>{{llavero.material}}</td> 
+          <td class="text-center action-block">
+            <button mat-button class="btn btn-info" routerLink="/llavero-detail/{{llavero.$key}}">View</button>&nbsp;
+            <button mat-button class="btn btn-warning" routerLink="/llavero-edit/{{llavero.$key}}">Edit</button>&nbsp;
+            <button mat-button class="btn btn-danger" (click)="deleteLlavero(llavero)">Delete</button>
+            <!--<em class="far fa-eye" routerLink="/llavero-detail/{{llavero.$key}}"></em> |
+            <em class="far fa-edit" routerLink="/llavero-edit/{{llavero.$key}}"></em> | 
+            <em class="far fa-trash-alt" (click)="deleteLlavero(llavero)"></em>-->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Pagination -->
+  <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+</div>

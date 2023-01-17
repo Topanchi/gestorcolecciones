@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NotificationService } from 'src/app/services/notification.service';
+import { NotificationService } from '../../services/notification.service';
 import { IronManFunkoService } from '../../services/iron-man-funko.service';
 
 @Component({

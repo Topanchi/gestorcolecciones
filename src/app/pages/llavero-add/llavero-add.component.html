@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-sm-12">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                  <span class="badge badge-primary">Home</span>
+    
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                  <span class="badge badge-success">llavero-add</span>
+    
+              </li>
+          </ol>
+      </nav>
+    </div>
+</div>
+
+<div class="pt-3 pb-2 mb-3 border-bottom bordecito">
+    <h1 class="h2">Añadir llavero</h1>
+    <p class="custom-text">Porfavor complete los campos...
+    </p>
+</div>
+
+<div class="container">
+    <div class="row bordecito">
+        <div class="col-md-12">
+            <form [formGroup]="llaveroForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="numero">Número</label>
+                    <input type="number" class="form-control" id="numero" formControlName="numero" placeholder="Número de colección">
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre" placeholder="Nombre del llavero">
+                </div>
+                <div class="form-group">
+                    <label for="material">Material</label>
+                    <input type="text" class="form-control" id="material" formControlName="material" placeholder="Material del llavero">
+                </div>
+                <div class="form-group">
+                    <label for="pais">País</label>
+                    <input type="text" class="form-control" id="pais" formControlName="pais" placeholder="País de procedencia del llavero">
+                </div>
+                <div class="form-group">
+                    <label for="comentarios">Comentarios</label>
+                    <input type="text" class="form-control" id="comentarios" formControlName="comentarios" placeholder="comentarios">
+                </div>
+                <div class="form-group">
+                    <label for="img">Url</label>
+                    <input type="text" class="form-control" id="img" formControlName="img" placeholder="Url imagen llavero">
+                </div>
+                <div class="form-group text-right">
+                    <button type="submit" class="btn btn-primary  m-2">Añadir</button>
+                    <button type="submit" class="btn btn-warning  mr-2">Reset</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>    
+</div>

@@ -1,5 +1,10 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/compat/database';
+import { Observable } from 'rxjs';
+import {map, catchError} from "rxjs/operators";
+import { environment } from '../../environments/environment';
+import { FunkoEntity } from '../models/funko-entity';
 import { FunkoIronMan } from '../models/funko-iron-man';
 
 @Injectable({
@@ -7,10 +12,23 @@ import { FunkoIronMan } from '../models/funko-iron-man';
 })
 export class IronManFunkoService {
 
+  private url = environment.urlSmcBackend + "/funko";
+  private httpOptions = {headers: new HttpHeaders({'Content-type': 'application/json'})};
+
   funkosRef: AngularFireList<any>;    
   funkoRef: AngularFireObject<any>;   
 
-  constructor(private _db: AngularFireDatabase) { }
+  constructor(private _db: AngularFireDatabase,private http: HttpClient,) { }
+
+  public obtenerTodos(): Observable<FunkoEntity[]> {
+    console.log("url:: ", this.url+ "/findAll");
+    return this.http.get<FunkoEntity[]>(this.url+ "/findAll", this.httpOptions);
+    /*
+    return this.http.get<FunkoEntity[]>(this.url+ "/findAll", this.httpOptions).pipe(
+      map(response => response as FunkoEntity[])
+    );
+    */
+  }
 
   // Fetch Keys List
   obtenerFunkosIronMan() {

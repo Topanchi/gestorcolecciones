@@ -38,6 +38,31 @@ const routes: Routes = [
     loadChildren: () => import('./pages/funko-add/funko-add.module').then(m => m.FunkoAddModule),
   },
   {
+    //canActivate: [AuthGuard],
+    path:'llavero-list', 
+    loadChildren: () => import('./pages/llavero-list/llavero-list.module').then(m => m.LlaveroListModule),
+  },
+  {
+    //canActivate: [AuthGuard],
+    path:'llavero-gallery', 
+    loadChildren: () => import('./pages/llavero-gallery/llavero-gallery.module').then(m => m.LlaveroGalleryModule),
+  },
+  {
+    canActivate: [],
+    path:'llavero-detail/:id', 
+    loadChildren: () => import('./pages/llavero-detail/llavero-detail.module').then(m => m.LlaveroDetailModule),
+  },
+  {
+    canActivate: [UserGuard],
+    path:'llavero-edit/:id', 
+    loadChildren: () => import('./pages/llavero-edit/llavero-edit.module').then(m => m.LlaveroEditModule),
+  },
+  {
+    //canActivate: [AuthGuard],
+    path:'llavero-add', 
+    loadChildren: () => import('./pages/llavero-add/llavero-add.module').then(m => m.LlaveroAddModule),
+  },
+  {
     canActivate: [],
     path: '**', 
     loadChildren: () => import('./pages/pages-not-found/pages-not-found.module').then(m => m.PagesNotFoundModule),

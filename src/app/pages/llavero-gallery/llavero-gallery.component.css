@@ -1,0 +1,31 @@
+.bordecito {
+  padding: 20px;
+}
+
+.padd {
+  padding: 20px;
+}
+
+.example-card {
+  max-width: 400px;
+}
+  
+.example-header-image {
+  background-image: url('https://w7.pngwing.com/pngs/221/900/png-transparent-computer-icons-key-key-logo-desktop-wallpaper-skeleton-key.png');
+  background-size: cover;
+}
+
+img {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fondo {
+  /* background-color: rgb(247, 247, 247); */
+  color: rgb(255, 0, 0);
+  
+}

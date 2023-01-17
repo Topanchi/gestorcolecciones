@@ -26,7 +26,8 @@
 
 <div class="album py-5 bg-light bordecito">
   <div class="row" style="padding: 20px;">
-    <div *ngFor="let item of ironManFunkos | paginate: { itemsPerPage: 3, currentPage: p }; let i = index; " class="col-md-4">
+    <!-- -->
+    <div *ngFor="let item of ironManFunkos | paginate: { itemsPerPage: 3, currentPage: p }; let i = index;" class="col-md-4">
       <mat-card class="example-card">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
@@ -39,7 +40,7 @@
             {{item.description}}
           </p>
           <p>
-            Precio: <strong>{{item.price | precio}}</strong>
+            Precio: <strong>{{item.price}}</strong>
           </p>
         </mat-card-content>
         <mat-card-actions>
@@ -51,6 +52,6 @@
       <br>
     </div>
   </div>
-  <pagination-controls (pageChange)="p = $event" ></pagination-controls> <!-- autoHide="true" responsive="true" -->
+  <pagination-controls (pageChange)="p = $event" ></pagination-controls><!-- autoHide="true" responsive="true" -->
 </div>
 
