@@ -41,9 +41,15 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button class="btn btn-info" routerLink="/funko-detail/{{item.$key}}"><fa-icon [icon]="faEye"></fa-icon></button>&nbsp;
-          <button mat-button class="btn btn-warning" routerLink="/funko-edit/{{item.$key}}"><fa-icon [icon]="faEdit"></fa-icon></button>&nbsp;
-          <button mat-button class="btn btn-danger" routerLink="/funko-delete/{{item.$key}}"><fa-icon [icon]="faTrash"></fa-icon></button>
+          <button mat-button class="btn btn-info" routerLink="/funko-detail/{{item.$key}}" placement="top" ngbTooltip="Ver funko">
+            <fa-icon [icon]="faEye"></fa-icon>
+          </button>&nbsp;
+          <button mat-button class="btn btn-warning" routerLink="/funko-edit/{{item.$key}}" placement="top" ngbTooltip="Editar funko">
+            <fa-icon [icon]="faEdit"></fa-icon>
+          </button>&nbsp;
+          <button mat-button class="btn btn-danger" routerLink="/funko-delete/{{item.$key}}" placement="top" ngbTooltip="Borrar funko">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
         </mat-card-actions>
       </mat-card>
       <br>

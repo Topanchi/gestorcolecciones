@@ -46,12 +46,12 @@
         <mat-card-actions class="row">
           <div class="row">
             <div class="col-6 text-center">
-              <button mat-button class="btn btn-warning align-items-center" routerLink="/llavero-edit/{{item.$key}}">
+              <button mat-button class="btn btn-warning align-items-center" routerLink="/llavero-edit/{{item.$key}}" placement="end" ngbTooltip="Editar llavero">
                 <fa-icon [icon]="faEdit"></fa-icon>
             </button>
             </div>
             <div class="col-6 text-center">
-              <button mat-button class="btn btn-danger" (click)="deleteLlavero(item)">
+              <button mat-button class="btn btn-danger" (click)="deleteLlavero(item)" placement="start" ngbTooltip="Borrar llavero">
                 <fa-icon [icon]="faTrash"></fa-icon>
               </button>  
             </div>

@@ -53,9 +53,15 @@
           <td>{{llavero.material}}</td> 
           <td class="text-center" *ngIf="llavero.img != ''; else vacio"><fa-icon [icon]="faCheckDouble"></fa-icon></td>
           <td class="text-center action-block">
-            <button mat-button class="btn btn-info" routerLink="/llavero-detail/{{llavero.$key}}"><fa-icon [icon]="faEye"></fa-icon></button>&nbsp;
-            <button mat-button class="btn btn-warning" routerLink="/llavero-edit/{{llavero.$key}}"><fa-icon [icon]="faEdit"></fa-icon></button>&nbsp;
-            <button mat-button class="btn btn-danger" (click)="deleteLlavero(llavero)"><fa-icon [icon]="faTrash"></fa-icon></button>
+            <button mat-button class="btn btn-info" routerLink="/llavero-detail/{{llavero.$key}}" placement="top" ngbTooltip="Ver llavero">
+              <fa-icon [icon]="faEye"></fa-icon>
+            </button>&nbsp;
+            <button mat-button class="btn btn-warning" routerLink="/llavero-edit/{{llavero.$key}}" placement="top" ngbTooltip="Editar llavero">
+              <fa-icon [icon]="faEdit"></fa-icon>
+            </button>&nbsp;
+            <button mat-button class="btn btn-danger" (click)="deleteLlavero(llavero)" placement="top" ngbTooltip="Borrar llavero">
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
         </tr>
       </tbody>
     </table>
