@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FunkoEntity } from '../../models/funko-entity';
 import { FunkoIronMan } from '../../models/funko-iron-man';
 import { IronManFunkoService } from '../../services/iron-man-funko.service';
+import { faEye, faEdit, faTrash, faAdd } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-funko-list',
@@ -13,12 +14,15 @@ export class FunkoListComponent implements OnInit {
   p: number = 1; 
   funkos: FunkoEntity[];
   image: string | ArrayBuffer;
+  faEye = faEye;
+  faEdit = faEdit;
+  faTrash = faTrash;
+  faAdd = faAdd;
 
   constructor(private _ironManFunkoService: IronManFunkoService) { }
 
   ngOnInit(): void {
     this.obtenerFunkosIronMan();
-    //this.testLlamadaBackend();
   }
 
 
@@ -33,22 +37,5 @@ export class FunkoListComponent implements OnInit {
       });
     });
   }
-/*
-  private  testLlamadaBackend() {
-    this._ironManFunkoService.obtenerTodos().subscribe(
-      (data: FunkoEntity[]) => {
-        if(data !== undefined){
-          this.funkos = data;
-          console.log("this.funkos:: ", this.funkos);
-        }
-      }, error => {
-        console.error(error);
-      });
- 
-      //console.log("this.funkos:: ", this.funkos);
-
-  }
-*/
-
 
 }

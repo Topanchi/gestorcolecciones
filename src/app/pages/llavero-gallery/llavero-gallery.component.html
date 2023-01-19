@@ -16,8 +16,8 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom bordecito">
     <h1 class="" style="align-content: center;" *ngIf="hideWhenNoLlavero">Llaveros registrados {{llaveros.length}}</h1>
     <h1 class="" style="align-content: center;" *ngIf="noData">Llaveros registrados {{llaveros.length}}</h1>
-    <a routerLink="/llavero-add" class="btn btn-success" >
-      <!----> <em class="fas fa-plus custom-fa-plus"></em> 
+    <a routerLink="/llavero-add" class="btn btn-success">
+      <fa-icon [icon]="faAdd"></fa-icon> 
       Añadir
     </a>
 </div>
@@ -46,10 +46,14 @@
         <mat-card-actions class="row">
           <div class="row">
             <div class="col-6 text-center">
-              <button mat-button class="btn btn-warning align-items-center" routerLink="/llavero-edit/{{item.$key}}">Edit</button>
+              <button mat-button class="btn btn-warning align-items-center" routerLink="/llavero-edit/{{item.$key}}">
+                <fa-icon [icon]="faEdit"></fa-icon>
+            </button>
             </div>
             <div class="col-6 text-center">
-              <button mat-button class="btn btn-danger" (click)="deleteLlavero(item)">Delete</button>  
+              <button mat-button class="btn btn-danger" (click)="deleteLlavero(item)">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </button>  
             </div>
           </div>
         </mat-card-actions>

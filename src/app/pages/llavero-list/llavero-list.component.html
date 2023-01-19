@@ -17,7 +17,7 @@
     <h1 class="" style="align-content: center;" *ngIf="hideWhenNoLlavero">Llaveros registrados {{Llavero.length}}</h1>
     <h1 class="" style="align-content: center;" *ngIf="noData">Llaveros registrados {{Llavero.length}}</h1>
     <a routerLink="/llavero-add" class="btn btn-success" >
-      <!----> <em class="fas fa-plus custom-fa-plus"></em> 
+      <fa-icon [icon]="faAdd"></fa-icon> 
       Añadir
     </a>
 </div>
@@ -29,7 +29,7 @@
     
     <p class="nodata-msg">No existen llaveros registrados aún!</p>
     <a routerLink="/agregar-llavero" class="btn btn-success">
-      <em class="fas fa-plus custom-fa-plus"></em>
+      <fa-icon [icon]="faAdd"></fa-icon>
       Añadir llavero
     </a>
   </div>
@@ -42,26 +42,26 @@
           <th scope="col">ID</th>
           <th scope="col">Nombre</th>
           <th scope="col">Material</th>
+          <th class="text-center" scope="col">Imagen</th>
           <th class="text-center" scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <!-- *ngFor loop iterates over Student array and fetch the student's data -->
-        <!-- paginate pipe will add pagination in student's list, it won't show if items are less then 7 -->
         <tr *ngFor="let llavero of Llavero | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;">  
           <td>{{llavero.numero}}</td>
           <td>{{llavero.nombre}}</td>
           <td>{{llavero.material}}</td> 
+          <td class="text-center" *ngIf="llavero.img != ''; else vacio"><fa-icon [icon]="faCheckDouble"></fa-icon></td>
           <td class="text-center action-block">
-            <button mat-button class="btn btn-info" routerLink="/llavero-detail/{{llavero.$key}}">View</button>&nbsp;
-            <button mat-button class="btn btn-warning" routerLink="/llavero-edit/{{llavero.$key}}">Edit</button>&nbsp;
-            <button mat-button class="btn btn-danger" (click)="deleteLlavero(llavero)">Delete</button>
-            <!--<em class="far fa-eye" routerLink="/llavero-detail/{{llavero.$key}}"></em> |
-            <em class="far fa-edit" routerLink="/llavero-edit/{{llavero.$key}}"></em> | 
-            <em class="far fa-trash-alt" (click)="deleteLlavero(llavero)"></em>-->
+            <button mat-button class="btn btn-info" routerLink="/llavero-detail/{{llavero.$key}}"><fa-icon [icon]="faEye"></fa-icon></button>&nbsp;
+            <button mat-button class="btn btn-warning" routerLink="/llavero-edit/{{llavero.$key}}"><fa-icon [icon]="faEdit"></fa-icon></button>&nbsp;
+            <button mat-button class="btn btn-danger" (click)="deleteLlavero(llavero)"><fa-icon [icon]="faTrash"></fa-icon></button>
         </tr>
       </tbody>
     </table>
+    <ng-template #vacio>
+      <td class="text-center"><fa-icon [icon]="faCircleXmark"></fa-icon></td> 
+    </ng-template>
   </div>
   <!-- Pagination -->
   <pagination-controls (pageChange)="p = $event" ></pagination-controls>

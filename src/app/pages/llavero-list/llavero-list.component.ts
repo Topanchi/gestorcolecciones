@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr'; 
 import { LlaverosService } from '../../services/llaveros.service';
 import { Llavero } from '../../models/llavero';
+import { faEye, faEdit, faTrash, faAdd, faCheckDouble, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-llavero-list',
@@ -13,6 +14,12 @@ export class LlaveroListComponent implements OnInit {
   Llavero: Llavero[];                 // Save keys data in Student's array.
   hideWhenNoLlavero: boolean = false; // Hide keys data table when no student.
   noData: boolean = false; 
+  faEye = faEye;
+  faEdit = faEdit;
+  faTrash = faTrash;
+  faAdd = faAdd;
+  faCheckDouble = faCheckDouble;
+  faCircleXmark = faCircleXmark;
 
   constructor(public _llaveroService: LlaverosService, public toastr: ToastrService) { }
 
