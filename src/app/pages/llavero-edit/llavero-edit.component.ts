@@ -12,9 +12,11 @@ import { LlaverosService } from '../../services/llaveros.service';
   styleUrls: ['./llavero-edit.component.css']
 })
 export class LlaveroEditComponent implements OnInit {
+  public id: string;
   public llaveroEditForm: FormGroup;
   public llavero: Llavero;
-  urlImage: string;
+  public existImage: boolean = false;
+  public urlImage: string;
   imagenes: any[] = [];
 
 
@@ -25,15 +27,19 @@ export class LlaveroEditComponent implements OnInit {
               private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const id = this.actRoute.snapshot.paramMap.get('id');
-    this.obtenerLlavero(id);
+    this.id = this.actRoute.snapshot.paramMap.get('id');
+    this.obtenerLlavero(this.id);
   }
 
   private obtenerLlavero(id: string) {
     this._llaveroService.obtenerLlaveroPorId(id).valueChanges().subscribe((llavero: Llavero) => {
       console.log(llavero);
-      this.urlImage = llavero.img;
-      //this.funkoIronMan.imageSolo = funko.imageSolo;
+      if(llavero.img !== ""){
+        this.urlImage = llavero.img;
+        this.existImage = true;
+      }
+      this.llavero = llavero;
+     
       this.initForm(llavero);
       this.setFormValues(llavero);
     });
@@ -85,17 +91,17 @@ export class LlaveroEditComponent implements OnInit {
   }
 
   private seteoObjetoFunko(value: any) {
-    this.llavero = new Llavero(this.llavero.$key,
-                                          value.nombre, 
-                                          value.material, 
-                                          value.numero, 
-                                          value.comentarios, 
-                                          value.pais,
-                                          this.urlImage);
-
+    this.llavero = new Llavero(this.id,
+                                value.nombre, 
+                                value.material, 
+                                value.numero, 
+                                value.comentarios, 
+                                value.pais,
+                                this.urlImage);
+                                
     this._llaveroService.actualizarLlavero(this.llavero);
     this._notificationService.showSuccess('Llavero editado correctamente',("Info"));
-    this.router.navigate(['funko-list']);
+    this.router.navigate(['llavero-list']);
   }
 
 }

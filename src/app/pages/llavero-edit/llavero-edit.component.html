@@ -53,13 +53,15 @@
                     </div>
                     <div class="col-lg-5 col-md-12 col-sm-12">
                         <div class="row">
-                            <div class="col-md-12 mb-3">
+                            <div *ngIf="existImage; else dontExist" class="col-md-12 mb-3">
                                 <img src="{{this.urlImage}}" alt="">
                             </div>    
                         </div>
                     </div>
                 </div>
-                
+                <ng-template #dontExist>
+                    <img src="" alt="No existe imagen">
+                  </ng-template>
                 <button type="submit" class="btn btn-primary btn-block m-2">Editar</button>
             </form>
         </div>

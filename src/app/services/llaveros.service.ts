@@ -44,7 +44,6 @@ export class LlaverosService {
   // Update Key Object
   //TODO: revisar sintaxis de update con nueva actualizacion de firebase
   actualizarLlavero(llavero: Llavero) {
-    console.log("objeto a editar: ",llavero);
     this._db.database.ref('llaveros/' + llavero.$key).update({
       nombre: llavero.nombre,
       material: llavero.material,
