@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faAdd } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-funko-overview',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./funko-overview.component.css']
 })
 export class FunkoOverviewComponent implements OnInit {
+  faAdd = faAdd;
 
   constructor() { }
 
