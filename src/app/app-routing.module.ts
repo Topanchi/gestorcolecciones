@@ -19,6 +19,11 @@ const routes: Routes = [
   },
   {
     canActivate: [AuthGuard],
+    path:'funko-overview', 
+    loadChildren: () => import('./pages/funko-overview/funko-overview.module').then(m => m.FunkoOverviewModule),
+  },
+  {
+    canActivate: [AuthGuard],
     path:'funko-list', 
     loadChildren: () => import('./pages/funko-list/funko-list.module').then(m => m.FunkoListModule),
   },
@@ -36,6 +41,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     path:'funko-add', 
     loadChildren: () => import('./pages/funko-add/funko-add.module').then(m => m.FunkoAddModule),
+  },
+  {
+    canActivate: [AuthGuard],
+    path:'llavero-overview', 
+    loadChildren: () => import('./pages/llavero-overview/llavero-overview.module').then(m => m.LlaveroOverviewModule),
   },
   {
     //canActivate: [AuthGuard],
