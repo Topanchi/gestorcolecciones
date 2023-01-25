@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faAdd } from '@fortawesome/free-solid-svg-icons';
+import { faList } from '@fortawesome/free-solid-svg-icons';
 import { Llavero } from '../../models/llavero';
 import { LlaverosService } from '../../services/llaveros.service';
 
@@ -9,7 +9,7 @@ import { LlaverosService } from '../../services/llaveros.service';
   styleUrls: ['./llavero-overview.component.css']
 })
 export class LlaveroOverviewComponent implements OnInit {
-  faAdd = faAdd;
+  faList = faList;
   totalLlaveros: number;
   llavero: Llavero[]; 
   llaveroGoma: Llavero[]; 
