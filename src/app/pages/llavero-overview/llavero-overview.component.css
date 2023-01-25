@@ -86,6 +86,32 @@ a.wrimagecard:hover, .wrimagecard-topimage:hover {
     color: #FFF;
 }
 
+.card-counter.madera{
+    background-color: #e09f12b8;
+    color: #FFF;
+}
+
+.card-counter.hueso{
+    background-color: #a4e3e2;
+    color: rgb(10, 10, 10);
+}
+
+.card-counter.peluche{
+    background-color: #e10ba8;
+    color: #FFF;
+}
+
+.card-counter.lana{
+    background-color: #7c571f;
+    color: #FFF;
+}
+
+.card-counter.tipochapa{
+    background-color: #369258;
+    color: #FFF;
+}
+
+
 .card-counter i{
     font-size: 5em;
     opacity: 0.2;

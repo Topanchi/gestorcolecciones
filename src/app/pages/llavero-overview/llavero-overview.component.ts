@@ -17,6 +17,12 @@ export class LlaveroOverviewComponent implements OnInit {
   llaveroMetal: Llavero[]; 
   llaveroGomaDura: Llavero[];
   llaveroCuero: Llavero[];
+  llaveroMadera: Llavero[];
+  llaveroHueso: Llavero[];
+  llaveroPeluche: Llavero[];
+  llaveroLana: Llavero[];
+  llaveroTipoChapa: Llavero[];
+  llaveroAliado: Llavero[];
 
   constructor(public _llaveroService: LlaverosService) { }
 
@@ -28,6 +34,12 @@ export class LlaveroOverviewComponent implements OnInit {
     this.obtenerPorMetal('Metal');
     this.obtenerPorGomaDura('Goma Dura');
     this.obtenerPorCuero('Cuero');
+    this.obtenerPorMadera('Madera');
+    this.obtenerPorHueso('Hueso');
+    this.obtenerPorPeluche('Peluche');
+    this.obtenerPorLana('Lana');
+    this.obtenerPorTipoChapa('Tipo Chapa');
+    //this.obtenerPorAliado();
   }
 
   
@@ -39,6 +51,30 @@ export class LlaveroOverviewComponent implements OnInit {
         let a = item.payload.toJSON(); 
         a['$key'] = item.key;
         this.llavero.push(a as Llavero);
+      })
+    })
+  }
+
+  private obtenerPorAliado() {
+    let s = this._llaveroService.obtenerLlaveros()
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.llavero = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON(); 
+        a['$key'] = item.key;
+        if(a['material'] !== 'Plástico' 
+            && a['material'] !== 'Goma' 
+            && a['material'] !== 'Goma Dura' 
+            && a['material'] !== 'Metal' 
+            && a['material'] !== 'Cuero' 
+            && a['material'] !== 'Madera' 
+            && a['material'] !== 'Hueso' 
+            && a['material'] !== 'Hueso' 
+            && a['material'] !== 'Peluche' 
+            && a['material'] !== 'Lana' 
+            && a['material'] !== 'Tipo Chapa'){
+          this.llaveroAliado.push(a as Llavero);
+        }
       })
     })
 
@@ -100,6 +136,66 @@ export class LlaveroOverviewComponent implements OnInit {
         let a = item.payload.toJSON(); 
         a['$key'] = item.key;
         this.llaveroCuero.push(a as Llavero);
+      })
+    })
+  }
+
+  private obtenerPorMadera(arg0: string) {
+    let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.llaveroMadera = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON(); 
+        a['$key'] = item.key;
+        this.llaveroMadera.push(a as Llavero);
+      })
+    })
+  }
+
+  private obtenerPorHueso(arg0: string) {
+    let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.llaveroHueso = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON(); 
+        a['$key'] = item.key;
+        this.llaveroHueso.push(a as Llavero);
+      })
+    })
+  }
+
+  private obtenerPorPeluche(arg0: string) {
+    let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.llaveroPeluche = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON(); 
+        a['$key'] = item.key;
+        this.llaveroPeluche.push(a as Llavero);
+      })
+    })
+  }
+
+  private obtenerPorLana(arg0: string) {
+    let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.llaveroLana = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON(); 
+        a['$key'] = item.key;
+        this.llaveroLana.push(a as Llavero);
+      })
+    })
+  }
+
+  private obtenerPorTipoChapa(arg0: string) {
+    let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.llaveroTipoChapa = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON(); 
+        a['$key'] = item.key;
+        this.llaveroTipoChapa.push(a as Llavero);
       })
     })
   }
