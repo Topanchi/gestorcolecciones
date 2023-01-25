@@ -59,5 +59,10 @@ export class LlaverosService {
     this.llaveroRef.remove();
   }
 
+  obtenerLlaverosPorMaterial(material: string) {
+    this.llaverosRef = this._db.list('llaveros', ref => ref.orderByChild("material").equalTo(material));
+    return this.llaverosRef;
+  }
+
 
 }
