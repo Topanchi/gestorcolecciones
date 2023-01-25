@@ -22,7 +22,6 @@ export class LlaveroOverviewComponent implements OnInit {
   llaveroPeluche: Llavero[];
   llaveroLana: Llavero[];
   llaveroTipoChapa: Llavero[];
-  llaveroAliado: Llavero[];
 
   constructor(public _llaveroService: LlaverosService) { }
 
@@ -39,7 +38,6 @@ export class LlaveroOverviewComponent implements OnInit {
     this.obtenerPorPeluche('Peluche');
     this.obtenerPorLana('Lana');
     this.obtenerPorTipoChapa('Tipo Chapa');
-    //this.obtenerPorAliado();
   }
 
   
@@ -53,31 +51,6 @@ export class LlaveroOverviewComponent implements OnInit {
         this.llavero.push(a as Llavero);
       })
     })
-  }
-
-  private obtenerPorAliado() {
-    let s = this._llaveroService.obtenerLlaveros()
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
-      this.llavero = [];
-      data.forEach(item => {
-        let a = item.payload.toJSON(); 
-        a['$key'] = item.key;
-        if(a['material'] !== 'Plástico' 
-            && a['material'] !== 'Goma' 
-            && a['material'] !== 'Goma Dura' 
-            && a['material'] !== 'Metal' 
-            && a['material'] !== 'Cuero' 
-            && a['material'] !== 'Madera' 
-            && a['material'] !== 'Hueso' 
-            && a['material'] !== 'Hueso' 
-            && a['material'] !== 'Peluche' 
-            && a['material'] !== 'Lana' 
-            && a['material'] !== 'Tipo Chapa'){
-          this.llaveroAliado.push(a as Llavero);
-        }
-      })
-    })
-
   }
 
   private obtenerPorGoma(arg0: string) {
