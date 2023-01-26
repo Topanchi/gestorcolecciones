@@ -135,3 +135,8 @@ a.wrimagecard:hover, .wrimagecard-topimage:hover {
     display: block;
     font-size: 18px;
 }
+
+.chile {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_Chile.png');
+    background-size: cover;
+}

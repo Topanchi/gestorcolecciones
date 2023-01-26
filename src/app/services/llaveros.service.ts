@@ -60,5 +60,9 @@ export class LlaverosService {
     return this.llaverosRef;
   }
 
+  obtenerLlaverosPorPais(pais: string) {
+    this.llaverosRef = this._db.list('llaveros', ref => ref.orderByChild("pais").equalTo(pais));
+    return this.llaverosRef;
+  }
 
 }

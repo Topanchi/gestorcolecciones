@@ -64,107 +64,6 @@
           <span class="count-name">Cuero</span>
         </div>
     </div>
-    
-<!--
-    <div class="col-md-4 col-sm-4 bordecito">
-        <div class="wrimagecard wrimagecard-topimage">
-            <a href="#">
-                <div class="wrimagecard-topimage_header" style="background-color:rgba(187, 120, 36, 0.1) ">
-                    <i class="fa fa-key" style="color:#BB7824"></i>
-                </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Cantidad de llaveros
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                    </h4>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 bordecito">
-        <div class="wrimagecard wrimagecard-topimage">
-            <a href="#">
-                <div class="wrimagecard-topimage_header" style="background-color: rgba(22, 160, 133, 0.1)">
-                    <i class="fa fa-key" style="color:#16A085"></i>
-                </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Llaveros plásticos
-                        <div class="pull-right badge">{{this.llaveroPlastico.length}}</div>
-                    </h4>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 bordecito">
-        <div class="wrimagecard wrimagecard-topimage">
-            <a href="#">
-                <div class="wrimagecard-topimage_header" style="background-color:rgba(213, 15, 37, 0.1)">
-                    <i class="fa fa-key" style="color:#d50f25"></i>
-                </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Llaveros de goma
-                        <div class="pull-right badge">{{this.llaveroGoma.length}}</div>
-                    </h4>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 bordecito">
-        <div class="wrimagecard wrimagecard-topimage">
-            <a href="#">
-                <div class="wrimagecard-topimage_header" style="background-color:rgba(123, 67, 73, 0.1)">
-                    <i class="fa fa-key" style="color:#bc646e"></i>
-                </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Llaveros de metal
-                        <div class="pull-right badge">{{this.llaveroMetal.length}}</div>
-                    </h4>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 bordecito">
-        <div class="wrimagecard wrimagecard-topimage">
-            <a href="#">
-                <div class="wrimagecard-topimage_header" style="background-color:rgba(74, 15, 213, 0.1)">
-                    <i class="fa fa-key" style="color:#120fd5"></i>
-                </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Llaveros goma dura
-                        <div class="pull-right badge">{{this.llaveroGomaDura.length}}</div>
-                    </h4>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 bordecito">
-        <div class="wrimagecard wrimagecard-topimage">
-            <a href="#">
-                <div class="wrimagecard-topimage_header" style="background-color:rgba(213, 187, 15, 0.1)">
-                    <i class="fa fa-key" style="color:#d5ce0f"></i>
-                </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Llaveros de Cuero
-                        <div class="pull-right badge">{{this.llaveroCuero.length}}</div>
-                    </h4>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 bordecito">
-        <div class="wrimagecard wrimagecard-topimage">
-            <a href="#">
-                <div class="wrimagecard-topimage_header" style="background-color:rgba(213, 187, 15, 0.1)">
-                    <i class="fa fa-key" style="color:#d5ce0f"></i>
-                </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Llaveros de Madera
-                        <div class="pull-right badge">{{this.llaveroMadera.length}}</div>
-                    </h4>
-                </div>
-            </a>
-        </div>
-    </div>
--->
 </div>
 
 <div class="row">
@@ -215,6 +114,162 @@
 </div>
 
 <div class="row">
+    <div class="col-md-3 col-sm-3 table-responsive bordecito">
+        <table class="table table-sm table-dark">
+            <thead>
+              <tr>
+                <th class="text-center" scope="col">País</th>
+                <th class="text-center" scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroChile.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroBrasil.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1920px-Bandera_de_Espa%C3%B1a.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroEspana.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/1920px-Flag_of_England.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroInglaterra.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/1920px-Flag_of_Italy.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroItalia.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Costa_Rica_%28state%29.svg/1920px-Flag_of_Costa_Rica_%28state%29.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroCostaRica.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1920px-Flag_of_Germany.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroAlemania.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1920px-Flag_of_the_United_States.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroEeuu.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/1920px-Flag_of_Poland.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroPolonia.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Flag_of_Cuba.svg/1920px-Flag_of_Cuba.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroCuba.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/1920px-Flag_of_Greece.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroGrecia.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1920px-Flag_of_Argentina.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroArgentina.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Paraguay.svg">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroParaguay.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/1920px-Flag_of_Uruguay.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroUruguay.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Flag_of_Peru.svg/1920px-Flag_of_Peru.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroPeru.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1920px-Flag_of_Australia_%28converted%29.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroAustralia.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colombia.svg/1920px-Flag_of_Colombia.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroColombia.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/4/48/Flag_of_Bolivia.svg">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroBolivia.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1920px-Flag_of_Mexico.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroMexico.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/1920px-Flag_of_Turkey.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroTurquia.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/1920px-Flag_of_Ecuador.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroEcuador.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Flag_of_Puerto_Rico.svg/1920px-Flag_of_Puerto_Rico.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroPuertoRico.length}}</strong></td>
+              </tr>
+              <tr>
+                <td class="text-center" >
+                    <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/1920px-Flag_of_Canada_%28Pantone%29.svg.png">
+                </td>
+                <td class="text-center" ><strong>{{this.llaveroCanada.length}}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+    <div class="col-md-6 col-sm-6 bordecito">
+        
+    </div>
+    <!--
     <div class="col-md-6 col-sm-6 bordecito">
         <div class="wrimagecard wrimagecard-topimage">
             <a href="#">
@@ -222,48 +277,40 @@
                     <i class="fa fa-key" style="color:#BB7824"></i>
                 </div>
                 <div class="wrimagecard-topimage_title">
-                    <h4>Cantidad de llaveros
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
+                    <h4>Poner alguna wea de grafico
+                        pico
                     </h4>
                 </div>
-                <div class="wrimagecard-topimage_title">
-                    <h4>Cantidad de llaveros
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                    </h4>
-                </div>
+               
             </a>
         </div>
     </div>
-    <div class="col-md-6 col-sm-6 bordecito">
+    -->
+
+    <!--
+        <div class="col-md-6 col-sm-6 bordecito">
         <div class="wrimagecard wrimagecard-topimage">
             <a href="#">
                 <div class="wrimagecard-topimage_header" style="background-color:rgba(187, 120, 36, 0.1) ">
                     <i class="fa fa-key" style="color:#BB7824"></i>
+                    <h4>Procedencia de llaveros</h4>
                 </div>
                 <div class="wrimagecard-topimage_title">
-                    <h4>Cantidad de llaveros
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
+                    <div mat-card-avatar class="chile"></div>
+                    <h4>
+                        <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/7/78/Flag_of_Chile.svg">
+                        {{this.llaveroChile.length}}
                     </h4>
                 </div>
                 <div class="wrimagecard-topimage_title">
-                    <h4>Cantidad de llaveros
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
-                        <div class="pull-right badge">{{this.llavero.length}}</div>
+                    <h4>
+                        <img _ngcontent-jhc-c15="" class="mr-2" style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg">
+                        {{this.llaveroBrasil.length}}
                     </h4>
                 </div>
             </a>
         </div>
     </div>
+    -->
 
 </div>
