@@ -22,6 +22,7 @@ export class LlaveroOverviewComponent implements OnInit {
   llaveroPeluche: Llavero[];
   llaveroLana: Llavero[];
   llaveroTipoChapa: Llavero[];
+  llaveroGenero: Llavero[];
 
   llaveroChile: Llavero[];
   llaveroBrasil: Llavero[];
@@ -62,6 +63,7 @@ export class LlaveroOverviewComponent implements OnInit {
     this.obtenerPorPeluche('Peluche');
     this.obtenerPorLana('Lana');
     this.obtenerPorTipoChapa('Tipo Chapa');
+    this.obtenerPorGenero('Género');
 
     this.obtenerPorChile('Chile');
     this.obtenerPorBrasil('Brasil');
@@ -479,6 +481,18 @@ export class LlaveroOverviewComponent implements OnInit {
         let a = item.payload.toJSON(); 
         a['$key'] = item.key;
         this.llaveroTipoChapa.push(a as Llavero);
+      })
+    })
+  }
+
+  private obtenerPorGenero(arg0: string) {
+    let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
+    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+      this.llaveroGenero = [];
+      data.forEach(item => {
+        let a = item.payload.toJSON(); 
+        a['$key'] = item.key;
+        this.llaveroGenero.push(a as Llavero);
       })
     })
   }

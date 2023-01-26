@@ -111,6 +111,10 @@ a.wrimagecard:hover, .wrimagecard-topimage:hover {
     color: #FFF;
 }
 
+.card-counter.genero{
+    background-color: #923658;
+    color: #FFF;
+}
 
 .card-counter i{
     font-size: 5em;
