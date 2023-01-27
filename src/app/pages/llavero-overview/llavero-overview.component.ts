@@ -40,13 +40,13 @@ export class LlaveroOverviewComponent implements OnInit {
   llaveroUruguay: Llavero[];
   llaveroPeru: Llavero[];
   llaveroAustralia: Llavero[];
-  llaveroColombia: Llavero[];  //
-  llaveroBolivia: Llavero[];  //
-  llaveroMexico: Llavero[];  //
-  llaveroTurquia: Llavero[];  //
-  llaveroEcuador: Llavero[];  //
-  llaveroPuertoRico: Llavero[];  //
-  llaveroCanada: Llavero[];  //
+  llaveroColombia: Llavero[];
+  llaveroBolivia: Llavero[];
+  llaveroMexico: Llavero[];
+  llaveroTurquia: Llavero[];
+  llaveroEcuador: Llavero[];
+  llaveroPuertoRico: Llavero[];
+  llaveroCanada: Llavero[];
 
   constructor(public _llaveroService: LlaverosService) { }
 
@@ -92,7 +92,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorCanada(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroCanada = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -104,7 +104,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorPuertoRico(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroPuertoRico = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -116,7 +116,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorEcuador(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroEcuador = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -128,7 +128,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorTurquia(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroTurquia = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -140,7 +140,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorMexico(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroMexico = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -152,7 +152,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorAustralia(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroAustralia = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -164,7 +164,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorChile(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroChile = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -176,7 +176,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorBrasil(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroBrasil = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -188,7 +188,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorEspana(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroEspana = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -199,7 +199,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorInglaterra(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroInglaterra = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -210,7 +210,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorItalia(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroItalia = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -221,7 +221,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorCostaRica(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroCostaRica = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -232,7 +232,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorAlemania(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroAlemania = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -243,7 +243,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorEeuu(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroEeuu = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -254,7 +254,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorPolonia(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroPolonia = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -265,7 +265,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorCuba(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroCuba = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -276,7 +276,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorGrecia(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroGrecia = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -287,7 +287,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorArgentina(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroArgentina = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -298,7 +298,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorParaguay(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroParaguay = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -309,7 +309,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorUruguay(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroUruguay = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -320,7 +320,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorPeru(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroPeru = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -331,7 +331,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorColombia(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroColombia = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -342,7 +342,7 @@ export class LlaveroOverviewComponent implements OnInit {
   }
   private obtenerPorBolivia(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorPais(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroBolivia = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -355,7 +355,7 @@ export class LlaveroOverviewComponent implements OnInit {
   
   private obtenerTotal() {
     let s = this._llaveroService.obtenerLlaveros()
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llavero = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -367,7 +367,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorGoma(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroPlastico = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -379,7 +379,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorPlastico(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroGoma = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -391,7 +391,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorMetal(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroMetal = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -403,7 +403,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorGomaDura(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroGomaDura = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -415,7 +415,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorCuero(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroCuero = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -427,7 +427,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorMadera(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroMadera = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -439,7 +439,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorHueso(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroHueso = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -451,7 +451,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorPeluche(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroPeluche = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -463,7 +463,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorLana(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => { 
       this.llaveroLana = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -475,7 +475,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorTipoChapa(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroTipoChapa = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
@@ -487,7 +487,7 @@ export class LlaveroOverviewComponent implements OnInit {
 
   private obtenerPorGenero(arg0: string) {
     let s = this._llaveroService.obtenerLlaverosPorMaterial(arg0);
-    s.snapshotChanges().subscribe(data => { // Using snapshotChanges() method to retrieve list of data along with metadata($key)
+    s.snapshotChanges().subscribe(data => {
       this.llaveroGenero = [];
       data.forEach(item => {
         let a = item.payload.toJSON(); 
